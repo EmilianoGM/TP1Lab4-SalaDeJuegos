@@ -1,3 +1,7 @@
+# Trabajo práctico número 1 
+Laboratorio IV
+Desarrollador: Emiliano Medina
+
 # SalaDeJuegos
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.2.
