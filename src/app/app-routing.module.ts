@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './componentes/about/about.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { HomeComponent } from './componentes/home/home.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'tateti',
     component: TaTeTiComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 

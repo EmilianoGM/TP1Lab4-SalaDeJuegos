@@ -10,6 +10,8 @@ import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/a
 import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from './componentes/memotest/memotest.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { AboutComponent } from './componentes/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './componentes/home/home.component';
     AgilidadAritmeticaComponent,
     TaTeTiComponent,
     MemotestComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
