@@ -1,0 +1,38 @@
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit(formLogin.value)" class="formularioEntrada">
+  <div class="row">
+    <div class="col centrar">
+      <label>Correo</label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+  </div>
+    <div *ngFor="let validacion of mensajesValidacion.email">
+      <div class="row">
+        <div class="col centrar mensajeError"
+      *ngIf="formLogin.get('email').hasError(validacion.tipo) && (formLogin.get('email').dirty || formLogin.get('email').touched)">
+        {{validacion.mensaje}}
+      </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col centrar">
+      <label><span>O</span>Clave</label>
+      <input  id="password" type="password" formControlName="password">
+    </div>
+  </div>
+  <div *ngFor="let validacion of mensajesValidacion.password">
+    <div class="row">
+      <div class="col centrar mensajeError"
+      *ngIf="formLogin.get('password').hasError(validacion.tipo) && (formLogin.get('password').dirty || formLogin.get('password').touched)">
+        {{validacion.mensaje}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar">
+      <button class="btn btn-outline-primary btn-lg buttonSubmit" type="submit" [disabled]="!formLogin.valid" >
+        Acceder
+      </button>
+    </div>
+  </div>
+
+</form>

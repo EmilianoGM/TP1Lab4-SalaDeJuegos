@@ -1,0 +1,149 @@
+<!-- Navbar -->
+<!-- hidden spacer to center brand on mobile -->
+<!--
+<nav class="gradient navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="d-flex flex-grow-1">
+    <span class="w-100 d-lg-none d-block"></span>
+    <a class="navbar-brand d-none d-inline-block" href="#">
+        SALA DE JUEGOS
+    </a>
+    <div class="w-100 text-right">
+      <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#myNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+  </div>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+    <ul class="navbar-nav ml-auto flex-nowrap">
+      <li class="nav-item ">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/home']" routerLinkActive="router-link-active">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/anagrama']" routerLinkActive="router-link-active">Anagrama</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/piedra-papel-tijera']" routerLinkActive="router-link-active">PiePra/Papel/Tijera</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/agilidad-aritmetica']" routerLinkActive="router-link-active">Agilidad Aritmética</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/tateti']" routerLinkActive="router-link-active">TaTeTi</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item"[routerLink]="['/memotest']" routerLinkActive="router-link-active">Memotest</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+-->
+<nav class="gradient navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="d-flex flex-grow-1">
+    <span class="w-100 d-lg-none d-block"></span>
+    <a class="navbar-brand d-none d-inline-block" href="#">
+        SALA DE JUEGOS
+    </a>
+    <div class="w-100 text-right">
+      <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#myNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+  </div>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+    <ul class="navbar-nav ml-auto flex-nowrap">
+      <li class="nav-item ">
+        <a *ngIf="!hayUsuarioLoggeado"  (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/login']" routerLinkActive="router-link-active">Acceder</a>
+      </li>
+      <li class="nav-item ">
+        <a *ngIf="hayUsuarioLoggeado"  (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+      </li>
+      <li *ngIf="hayUsuarioLoggeado" class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+        <a class="nav-link menu-item" tabindex="0" ngbDropdownToggle id="juegosDropdown" role="button">
+          Juegos
+        </a>
+        <div ngbDropdownMenu aria-labelledby="juegosDropdown" class="gradientDos dropdown-menu">
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/anagrama']" routerLinkActive="router-link-active">Anagrama</a>
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/piedra-papel-tijera']" routerLinkActive="router-link-active">PiePra/Papel/Tijera</a>
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/agilidad-aritmetica']" routerLinkActive="router-link-active">Agilidad Aritmética</a>
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/adivinar-numero']" routerLinkActive="router-link-active">Adivina el número</a>
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/tateti']" routerLinkActive="router-link-active">TaTeTi</a>
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/memotest']" routerLinkActive="router-link-active">Memotest</a>
+          <a ngbDropdownItem (click)="isNavbarCollapsed = !isNavbarCollapsed" [routerLink]="['/ahorcado']" routerLinkActive="router-link-active">Ahorcado</a>
+        </div>
+      </li>
+      <li *ngIf="hayUsuarioLoggeado" class="nav-item ">
+        <a (click)="salir()" class="nav-link menu-item">Cerrar Sesión</a>
+      </li>
+      <li class="nav-item ">
+        <a (click)="isNavbarCollapsed = !isNavbarCollapsed" class="nav-link menu-item" [routerLink]="['/about']" routerLinkActive="router-link-active">Sobre mi</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="d-flex flex-grow-1">
+      <span class="w-100 d-lg-none d-block"></span>
+      <a class="navbar-brand d-none d-lg-inline-block" href="#">
+          Navbar 6
+      </a>
+      <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
+          <img src="//placehold.it/40?text=LOGO" alt="logo">
+      </a>
+      <div class="w-100 text-right">
+          <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#myNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+  </div>
+  <div  class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+      <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item">
+              <a href="#" class="nav-[ngbCollapse]="isNavbarCollapsed"link m-2 menu-item nav-active">Our Solution</a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link m-2 menu-item">How We Help</a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link m-2 menu-item">Blog</a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link m-2 menu-item">Contact</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+-->
+<!--
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <a class="navbar-brand" href="#">Angular</a>
+  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link menu-item" [routerLink]="['/home']" routerLinkActive="router-link-active">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link menu-item" [routerLink]="['/anagrama']" routerLinkActive="router-link-active">Anagrama</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link menu-item" [routerLink]="['/piedra-papel-tijera']" routerLinkActive="router-link-active">PiePra/Papel/Tijera</a>
+      </li>
+
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>Files</a>
+        <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">HTML</a>
+          <a class="dropdown-item" href="#">TS</a>
+          <a class="dropdown-item" href="#">JS</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+-->

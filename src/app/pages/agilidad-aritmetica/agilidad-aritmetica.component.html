@@ -1,0 +1,17 @@
+<app-spinner-juego></app-spinner-juego>
+<div class="container">
+  <h1>AGILIDAD ARITMÉTICA</h1>
+  <h4 class="mensaje">{{mensaje}}</h4>
+  <h4 class="mensaje">{{respuesta}}</h4>
+  <h4 class="mensaje">Calculo a resolver: {{mensajeCalculo}}</h4>
+  <h6 class="mensaje">Intentos: {{intentos}}</h6>
+  <form [formGroup]="formAgilidad" (ngSubmit)="jugar(formAgilidad.value.resultado)">
+    <input type="number" min="1" max="1000" formControlName="resultado">
+    <div class="row">
+      <div class="col ">
+        <button class="buttonInteract buttonJugar" type="submit" [disabled]="!formAgilidad.valid">JUGAR</button>
+        <app-button-resetear (emitData)="jugarDeNuevo()"></app-button-resetear>
+      </div>
+    </div>
+  </form>
+</div>

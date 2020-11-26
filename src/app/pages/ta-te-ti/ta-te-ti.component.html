@@ -1,0 +1,30 @@
+<app-spinner-juego></app-spinner-juego>
+<div class="container">
+  <h1>TA-TE-TI</h1>
+  <div class="juego">
+    <h4 class="mensaje">{{mensaje}}</h4>
+    <h4 class="mensaje">{{respuesta}}</h4>
+    <div class="tablero">
+      <div class="row">
+        <div class="col celda" (click)="jugar(0)">{{l1[0]}}</div>
+        <div class="col celda" (click)="jugar(1)">{{l1[1]}}</div>
+        <div class="col celda" (click)="jugar(2)">{{l1[2]}}</div>
+      </div>
+      <div class="row">
+        <div class="col celda" (click)="jugar(3)">{{l1[3]}}</div>
+        <div class="col celda" (click)="jugar(4)">{{l1[4]}}</div>
+        <div class="col celda" (click)="jugar(5)">{{l1[5]}}</div>
+      </div>
+      <div class="row">
+        <div class="col celda" (click)="jugar(6)">{{l1[6]}}</div>
+        <div class="col celda" (click)="jugar(7)">{{l1[7]}}</div>
+        <div class="col celda" (click)="jugar(8)">{{l1[8]}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col centrar">
+        <app-button-resetear (emitData)="jugarDeNuevo()"></app-button-resetear>
+      </div>
+    </div>
+  </div>
+</div>

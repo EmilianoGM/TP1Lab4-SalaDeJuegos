@@ -1,0 +1,18 @@
+.tarjeta{
+  margin: 5px;
+  background-color: #F7B7B1;
+  border-radius: 15px;
+  box-shadow: 0 9px #8B6D6A;
+}
+
+.tarjeta:active {
+  background-color: #EA7367;
+  box-shadow: 0 5px #8B6D6A;
+  transform: translateY(4px);
+}
+
+.titulo{
+  text-align: center;
+}
+
+

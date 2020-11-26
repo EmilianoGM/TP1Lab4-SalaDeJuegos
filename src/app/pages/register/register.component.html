@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="centrar stalinist">REGISTRO</h1>
+  <app-form-register (emitData)="registrarUsuario($event)"></app-form-register>
+  <div class="row">
+    <div class="col centrar stalinist">
+      <h4>¿Ya te encuentras registrado? <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Ingresa aquí</a></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar stalinist">
+      <div *ngIf="errorRegistro">
+        ¡Atención! Los datos que ingresaste ya se encuentran registrados.
+      </div>
+    </div>
+  </div>
+</div>

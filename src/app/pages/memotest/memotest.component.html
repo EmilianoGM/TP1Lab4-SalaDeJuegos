@@ -1,0 +1,56 @@
+<app-spinner-juego></app-spinner-juego>
+<div class="container">
+  <h1>MEMOTEST</h1>
+  <div class="juego">
+    <h4 class="mensaje">{{mensaje}}</h4>
+    <h4 class="mensaje">{{respuesta}}</h4>
+    <h6 class="mensaje">Cantidad de intentos: {{intentos}}</h6>
+    <div class="row">
+      <div *ngIf="tarjetas[0]" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block" src="../../../assets/images/perro.png">
+      </div>
+      <div *ngIf="!tarjetas[0]"  (click)="descubrirTarjeta(0)" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block"  src="../../../assets/images/pregunta.png">
+      </div>
+      <div *ngIf="tarjetas[5]" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block" src="../../../assets/images/serpiente.png">
+      </div>
+      <div *ngIf="!tarjetas[5]"  (click)="descubrirTarjeta(5)" class="col tarjeta tarjetaBack">
+        <img  class="mx-auto d-block"  src="../../../assets/images/pregunta.png">
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="tarjetas[2]" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block" src="../../../assets/images/elefante.png">
+      </div>
+      <div *ngIf="!tarjetas[2]" (click)="descubrirTarjeta(2)" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block"  src="../../../assets/images/pregunta.png">
+      </div>
+      <div *ngIf="tarjetas[3]" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block" src="../../../assets/images/elefante.png">
+      </div>
+      <div *ngIf="!tarjetas[3]"  (click)="descubrirTarjeta(3)" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block"  src="../../../assets/images/pregunta.png">
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="tarjetas[4]" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block" src="../../../assets/images/serpiente.png">
+      </div>
+      <div *ngIf="!tarjetas[4]" (click)="descubrirTarjeta(4)" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block"  src="../../../assets/images/pregunta.png">
+      </div>
+      <div *ngIf="tarjetas[1]" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block" src="../../../assets/images/perro.png">
+      </div>
+      <div *ngIf="!tarjetas[1]"  (click)="descubrirTarjeta(1)" class="col tarjeta tarjetaBack">
+        <img class="mx-auto d-block"  src="../../../assets/images/pregunta.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col centrar">
+        <app-button-resetear (emitData)="jugarDeNuevo()"></app-button-resetear>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<app-spinner-juego></app-spinner-juego>
+<div class="container">
+  <h1 class="titulo">PIEDRA, PAPEL O TIJERA</h1>
+  <div class="juego">
+    <h4 class="mensaje">{{mensaje}}</h4>
+    <h4 class="mensaje">{{respuesta}}</h4>
+    <h6 class="mensaje">Rondas restantes: {{intentos}}</h6>
+    <div class="row">
+      <div (click)="jugar('piedra')" class="col tarjeta">
+      <img class="mx-auto d-block" src="../../../assets/images/piedra.png" alt="Piedra">
+      </div>
+      <div (click)="jugar('papel')" class="col tarjeta">
+        <img class="mx-auto d-block" src="../../../assets/images/papel.png" alt="Papel">
+      </div>
+      <div (click)="jugar('tijera')" class="col tarjeta">
+        <img class="mx-auto d-block" src="../../../assets/images/tijeras.png" alt="Tijera">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col centrar">
+        <app-button-resetear (emitData)="jugarDeNuevo()"></app-button-resetear>
+      </div>
+    </div>
+  </div>
+</div>

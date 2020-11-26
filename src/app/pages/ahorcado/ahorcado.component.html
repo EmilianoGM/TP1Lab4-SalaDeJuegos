@@ -1,0 +1,24 @@
+<app-spinner-juego></app-spinner-juego>
+<div class="container">
+  <h1>AHORCADO</h1>
+
+    <img *ngIf="inicio" class="imagen" src="../../../assets/images/ahorcadoUno.png">
+    <img *ngIf="uno" class="imagen" src="../../../assets/images/ahorcadoDos.png">
+    <img *ngIf="dos" class="imagen" src="../../../assets/images/ahorcadoTres.png">
+    <img *ngIf="tres" class="imagen" src="../../../assets/images/ahorcadoCuatro.png">
+
+  <h4 class="mensaje">{{mensaje}}</h4>
+  <h4 class="mensaje">{{respuesta}}</h4>
+  <h4 class="mensaje">Palabra a adivinar: {{palabraUsuario}}</h4>
+  <h6 class="mensaje">Intentos: {{intentos}}</h6>
+  <form [formGroup]="formAhorcado" (ngSubmit)="jugar(formAhorcado.value.letra)">
+    <input type="text" formControlName="letra">
+    <div class="row">
+      <div class="col centrar">
+        <button class="buttonInteract buttonJugar " type="submit" [disabled]="!formAhorcado.valid">JUGAR</button>
+        <app-button-resetear (emitData)="jugarDeNuevo()"></app-button-resetear>
+      </div>
+    </div>
+  </form>
+
+</div>

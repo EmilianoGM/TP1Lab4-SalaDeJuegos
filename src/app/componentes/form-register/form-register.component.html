@@ -1,0 +1,66 @@
+<form [formGroup]="formRegister" (ngSubmit)="onSubmit(formRegister.value)" class="formularioEntrada">
+  <div class="row">
+    <div class="col centrar">
+      <label><span>OO</span>Correo</label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+  </div>
+  <div *ngFor="let validacion of mensajesValidacion.email">
+    <div class="row">
+      <div class="col centrar mensajeError"
+      *ngIf="formRegister.get('email').hasError(validacion.tipo) && (formRegister.get('email').dirty || formRegister.get('email').touched)">
+        {{validacion.mensaje}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar">
+      <label><span>OOO</span>Clave</label>
+      <input  id="password" type="password" formControlName="password">
+    </div>
+  </div>
+  <div *ngFor="let validacion of mensajesValidacion.password">
+    <div class="row">
+      <div class="col centrar mensajeError"
+      *ngIf="formRegister.get('password').hasError(validacion.tipo) && (formRegister.get('password').dirty || formRegister.get('password').touched)">
+        {{validacion.mensaje}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar">
+      <label><span>O</span>Nombre</label>
+      <input id="nombre" type="text" formControlName="nombre">
+    </div>
+  </div>
+  <div *ngFor="let validacion of mensajesValidacion.nombre">
+    <div class="row">
+      <div class="col centrar mensajeError"
+      *ngIf="formRegister.get('nombre').hasError(validacion.tipo) && (formRegister.get('nombre').dirty || formRegister.get('nombre').touched)">
+        {{validacion.mensaje}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar">
+      <label><span>O</span>Apellido</label>
+      <input id="apellido" type="text" formControlName="apellido">
+    </div>
+  </div>
+  <div *ngFor="let validacion of mensajesValidacion.apellido">
+    <div class="row">
+      <div class="col centrar mensajeError"
+      *ngIf="formRegister.get('apellido').hasError(validacion.tipo) && (formRegister.get('apellido').dirty || formRegister.get('apellido').touched)">
+        {{validacion.mensaje}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar">
+      <button class="btn btn-outline-primary btn-lg buttonSubmit" type="submit" [disabled]="!formRegister.valid" >
+        Registrarse
+      </button>
+    </div>
+  </div>
+</form>
+

@@ -2,3 +2,134 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: 'FredokaOne';
+  src: url(assets/fonts/FredokaOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'PressStart';
+  src: url(assets/fonts/PressStart2P-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url(assets/fonts/Comfortaa-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Audiowide';
+  src: url(assets/fonts/Audiowide-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Goldman';
+  src: url(assets/fonts/Goldman-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Stalinist';
+  src: url(assets/fonts/StalinistOne-Regular.ttf);
+}
+.container{
+  background-color: white;
+  margin-top: 5px;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.mensaje{
+  font-family: 'Comfortaa';
+}
+
+h1{
+  font-family: 'PressStart';
+  text-align: center;
+}
+
+body{
+  background-image: url("./assets/images/fondoToy.png");
+  background-size: contain;
+}
+
+.buttonInteract{
+  font-family: 'Audiowide';
+  font-size: 2em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px #8B6D6A;
+  outline:none;
+  margin: 10px;
+}
+
+.buttonResetear{
+  color: black;
+  background: radial-gradient(circle, rgba(174,186,247,1) 0%, rgba(249,170,186,1) 100%);
+
+}
+
+.buttonResetear:active{
+  color: white;
+  background: radial-gradient(circle, rgba(49,81,247,1) 0%, rgba(241,46,85,1) 100%);
+  border: none;
+  box-shadow: 0 2px #8B6D6A;
+  transform: translateY(4px);
+}
+
+.buttonResetear:focus {
+  border: none;
+  outline: none;
+}
+
+.buttonJugar{
+  color: black;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(227,200,38,1) 100%);
+}
+
+.buttonJugar:active{
+  color: white;
+  background: radial-gradient(circle, rgba(79,79,79,1) 0%, rgba(238,219,101,1) 100%);
+  border: none;
+  box-shadow: 0 2px #8B6D6A;
+  transform: translateY(4px);
+}
+
+.buttonJugar:focus {
+  border: none;
+  outline: none;
+}
+
+.buttonJugar:disabled{
+  color: #9a9a9a;
+  background: radial-gradient(circle, rgba(167,167,167,1) 0%, rgba(252,237,142,1) 100%);
+}
+
+.centrar{
+  text-align: center;
+}
+
+.listaPuntuacion{
+  font-family: 'Goldman';
+}
+
+.formularioEntrada{
+  font-family: 'Goldman';
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mensajeError{
+  color:red;
+  font-size: 0.8em;
+}
+
+span{
+  color: white;
+}
+
+label{
+  margin-right: 5px;
+}

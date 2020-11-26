@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="centrar stalinist">INGRESO</h1>
+  <app-form-login (emitData)="loggearUsuario($event)"></app-form-login>
+  <div class="row">
+    <div class="col centrar stalinist">
+      <h4>¿Aún no estás registrado? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Regístrate aquí</a></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col centrar stalinist">
+      <div *ngIf="errorLogin">
+        ¡Atención! Los datos que ingresaste no se encuentran en nuestra base de datos. Para acceder primero debes registrarte.
+      </div>
+    </div>
+  </div>
+</div>
+
